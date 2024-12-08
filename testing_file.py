@@ -4,7 +4,7 @@ from main import read_tm_csv, trace_ntm
 class TestNTMs(unittest.TestCase):
     def test_aplus(self):
         # Test the NTM for the language "a*"
-        machine_description, transitions = read_tm_csv('a_plus.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/a_plus.csv')
         
         # Define various test cases to validate the NTM's behavior
         test_cases = [
@@ -25,7 +25,7 @@ class TestNTMs(unittest.TestCase):
 
     def test_palindrome(self):
         # Test the NTM for palindrome strings
-        machine_description, transitions = read_tm_csv('palindrome.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/palindrome.csv')
         
         # Test cases for palindromes
         test_cases = [
@@ -43,7 +43,7 @@ class TestNTMs(unittest.TestCase):
     
     def test_equal_01s(self):
         # Test the NTM for strings with equal numbers of 0's and 1's
-        machine_description, transitions = read_tm_csv('equal_01s.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/equal_01s.csv')
         
         # Test cases to check if the NTM handles equal 0's and 1's correctly
         test_cases = [
@@ -62,7 +62,7 @@ class TestNTMs(unittest.TestCase):
     
     def test_abc_star(self):
         # Test the NTM for the language "a^n b^n c^m"
-        machine_description, transitions = read_tm_csv('abc_star.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/abc_star.csv')
         print(machine_description)
         print(transitions)
 
@@ -84,7 +84,7 @@ class TestNTMs(unittest.TestCase):
 class TestDTMS(unittest.TestCase):
     def test_aplus(self):
         # Test the DTM for the language "a*"
-        machine_description, transitions = read_tm_csv('a_plus_DTM.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/a_plus_DTM.csv')
         
         # Define test cases for the DTM's behavior
         test_cases = [
@@ -104,7 +104,7 @@ class TestDTMS(unittest.TestCase):
 
     def test_palindrome(self):
         # Test the DTM for palindrome strings
-        machine_description, transitions = read_tm_csv('palindrome_DTM.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/palindrome_DTM.csv')
         
         # Test cases for palindromes
         test_cases = [
@@ -122,7 +122,7 @@ class TestDTMS(unittest.TestCase):
     
     def test_equal_01s(self):
         # Test the DTM for strings with equal numbers of 0's and 1's
-        machine_description, transitions = read_tm_csv('equal_01s_DTM.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/equal_01s_DTM.csv')
         
         # Test cases for equal 0's and 1's
         test_cases = [
@@ -141,7 +141,7 @@ class TestDTMS(unittest.TestCase):
     
     def test_abc_star(self):
         # Test the DTM for the language "a^n b^n c^m"
-        machine_description, transitions = read_tm_csv('abc_star_DTM.csv')
+        machine_description, transitions = read_tm_csv('csv_tests/abc_star_DTM.csv')
         print(machine_description)
         print(transitions)
 
