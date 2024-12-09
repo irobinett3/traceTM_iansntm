@@ -48,7 +48,7 @@ class TestNTMs(unittest.TestCase):
         # Test cases to check if the NTM handles equal 0's and 1's correctly
         test_cases = [
             ("01_", True),  # Equal number of 0's and 1's
-            ("0011_", True),  # Equal number of 0's and 1's
+            ("0011", True),  # Equal number of 0's and 1's
             ("0101_", True),  # Equal number of 0's and 1's
             ("000_", False),  # Unequal number of 0's and 1's
             ("_", True),  # Empty string (trivially equal)
@@ -67,7 +67,7 @@ class TestNTMs(unittest.TestCase):
         # Test cases for the "a^n b^n c^m" language
         test_cases = [
             ("aabbcc_", True),  # Matches a^n b^n c^m
-            ("aaabbccc_", True),  # Matches a^n b^n c^m
+            ("aaabbccc", True),  # Matches a^n b^n c^m
             ("ab_", True),  # Matches a^n b^n
             ("abcabc_", False),  # Interleaved characters should be rejected
             ("_", True),  # Empty string should be accepted
@@ -86,10 +86,10 @@ class TestDTMS(unittest.TestCase):
         
         # Define test cases for the DTM's behavior
         test_cases = [
-            ("a_", True),       # Single 'a' should be valid
+            ("a", True),       # Single 'a' should be valid
             ("aaa_", True),     # Multiple 'a's should be valid
             ("b_", False),      # Invalid character 'b'
-            ("aaab_", False),   # Invalid ending character
+            ("aaab", False),   # Invalid ending character
             ("ab_", False),     # Invalid sequence
             ("a_", True),       # Another valid case with a single 'a'
         ]
@@ -106,8 +106,8 @@ class TestDTMS(unittest.TestCase):
         
         # Test cases for palindromes
         test_cases = [
-            ("aba_", True),  # Palindrome
-            ("abba_", True),  # Palindrome
+            ("aba", True),  # Palindrome
+            ("abba", True),  # Palindrome
             ("abc_", False),  # Not a palindrome
             ("_", True),  # Empty string is a palindrome
         ]
