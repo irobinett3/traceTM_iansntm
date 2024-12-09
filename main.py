@@ -181,8 +181,9 @@ def main():
         f.write(f"Machine States: {machine_description['states']}\n")
         f.write(f"Input Alphabet: {machine_description['input_alphabet']}\n")
         f.write(f"Tape Alphabet: {machine_description['tape_alphabet']}\n")
-        f.write(f"Start State: {machine_description['accept_state']}\n")
-        f.write(f"Accept State: {machine_description['reject_state']}\n")
+        f.write(f"Start State: {machine_description['start_state']}\n")
+        f.write(f"Accept State: {machine_description['accept_state']}\n")
+        f.write(f"Reject State: {machine_description['reject_state']}\n")
 
         # Write the configuration tree at each depth
         for depth, configurations in enumerate(tree):
