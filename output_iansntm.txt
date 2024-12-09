@@ -1,0 +1,15 @@
+Input String: abcaabas
+Machine Name: a*b*c* Nondeterministic
+Machine States: ['q1', 'q2', 'q3', 'q4', 'qacc', 'qrej']
+Input Alphabet: ['a', 'b', 'c']
+Tape Alphabet: ['a', 'b', 'c_']
+Start State: q0
+Accept State: qacc
+Reject State: qrej
+Depth 0: [['', 'q0', 'abcaabas']]
+Depth 1: [['a', 'q0', 'bcaabas'], ['a', 'q1', 'bcaabas'], ['a', 'q2', 'bcaabas'], ['a', 'q3', 'bcaabas']]
+Depth 2: [['ab', 'q1', 'caabas'], ['ab', 'q2', 'caabas'], ['ab', 'q3', 'caabas'], ['ab', 'q1', 'caabas'], ['ab', 'q2', 'caabas'], ['ab', 'q3', 'caabas'], ['a', 'qrej', 'bcaabas'], ['a', 'qrej', 'bcaabas']]
+Depth 3: [['ab', 'qrej', 'caabas'], ['abc', 'q2', 'aabas'], ['abc', 'q3', 'aabas'], ['ab', 'qrej', 'caabas']]
+Depth 4: [['abc', 'qrej', 'aabas'], ['abc', 'qrej', 'aabas']]
+String was not accepted, proceeded to depth: 4
+Number of transitions taken: 18
