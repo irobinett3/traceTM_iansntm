@@ -165,32 +165,37 @@ def get_possible_transitions(transitions, state, char):
 def main():
     # Input string for the Turing machine
     input_string = "abcaabas"
-    input_file = 'abc_star.csv'
-    # Read the machine description and transitions from the CSV
-    machine_description, transitions = read_tm_csv(input_file)
+    input_file = 'csv_tests/abc_star.csv'
+    
+    # Open the output.txt file for writing
+    with open('output.txt', 'w') as f:
+        # Read the machine description and transitions from the CSV
+        machine_description, transitions = read_tm_csv(input_file)
 
-    # Trace the machine behavior on the input string
-    tree, accepted, num_transitions = trace_ntm(machine_description, transitions, input_string)
+        # Trace the machine behavior on the input string
+        tree, accepted, num_transitions = trace_ntm(machine_description, transitions, input_string)
 
-    print(f"Machine Name: {machine_description["name"]}")
-    print(f"Machine States: {machine_description["states"]}")
-    print(f"Input Alphabet: {machine_description["input_alphabet"]}")
-    print(f"Tape Alphabet: {machine_description["tape_alphabet"]}")
-    print(f"Start State: {machine_description["accept_state"]}")
-    print(f"Accept State: {machine_description["reject_state"]}")
+        # Write the machine details to the output file
+        f.write(f"Input String: {input_string}\n")
+        f.write(f"Machine Name: {machine_description['name']}\n")
+        f.write(f"Machine States: {machine_description['states']}\n")
+        f.write(f"Input Alphabet: {machine_description['input_alphabet']}\n")
+        f.write(f"Tape Alphabet: {machine_description['tape_alphabet']}\n")
+        f.write(f"Start State: {machine_description['accept_state']}\n")
+        f.write(f"Accept State: {machine_description['reject_state']}\n")
 
-    # Print the configuration tree at each depth
-    for depth, configurations in enumerate(tree):
-        print(f"Depth {depth}: {configurations}")
+        # Write the configuration tree at each depth
+        for depth, configurations in enumerate(tree):
+            f.write(f"Depth {depth}: {configurations}\n")
 
-    # Print whether the string was accepted or not
-    if accepted:
-        print(f'String accepted at depth: {depth}')
-    else:
-        print(f'String was not accepted, proceeded to depth: {depth}')
+        # Write whether the string was accepted or not
+        if accepted:
+            f.write(f'String accepted at depth: {depth}\n')
+        else:
+            f.write(f'String was not accepted, proceeded to depth: {depth}\n')
 
-    # Print the number of transitions taken during the execution
-    print(f'Number of transitions taken: {num_transitions}')
+        # Write the number of transitions taken during the execution
+        f.write(f'Number of transitions taken: {num_transitions}\n')
 
 
 if __name__ == "__main__":

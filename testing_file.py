@@ -63,8 +63,6 @@ class TestNTMs(unittest.TestCase):
     def test_abc_star(self):
         # Test the NTM for the language "a^n b^n c^m"
         machine_description, transitions = read_tm_csv('csv_tests/abc_star.csv')
-        print(machine_description)
-        print(transitions)
 
         # Test cases for the "a^n b^n c^m" language
         test_cases = [
@@ -142,8 +140,7 @@ class TestDTMS(unittest.TestCase):
     def test_abc_star(self):
         # Test the DTM for the language "a^n b^n c^m"
         machine_description, transitions = read_tm_csv('csv_tests/abc_star_DTM.csv')
-        print(machine_description)
-        print(transitions)
+
 
         # Test cases for the "a^n b^n c^m" language
         test_cases = [
